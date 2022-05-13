@@ -5,8 +5,29 @@ int main()
 {
     srand(time(NULL)); // initialize random seed
 
-    int max_attempts = 7;
+    int diffChoice;
 
+    std::cout << "Choose difficulty: \n[1] Easy (10 attempts)\n[2] Normal (7 attempts)\n[3] Hard (5 attempts)\n"
+              << std::endl;
+    std::cout << "  >> ";
+    std::cin >> diffChoice;
+
+    int max_attempts;
+
+    switch (diffChoice)
+    {
+    case 1:
+        max_attempts = 10;
+    case 2:
+        max_attempts = 7;
+    case 3:
+        max_attempts = 5;
+    default:
+        std::cout << "Invalid choice... defaulting to normal.";
+        max_attempts = 7;
+    }
+
+    system("cls");
     int secretNum = rand() % 100 + 1;
     int userInput = 0;
     std::string name;
