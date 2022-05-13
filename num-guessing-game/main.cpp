@@ -18,13 +18,18 @@ int main()
     {
     case 1:
         max_attempts = 10;
+        break;
     case 2:
         max_attempts = 7;
+        break;
     case 3:
         max_attempts = 5;
+        break;
     default:
-        std::cout << "Invalid choice... defaulting to normal.";
+        std::cout << "Invalid choice... defaulting to normal.\n";
+        system("PAUSE");
         max_attempts = 7;
+        break;
     }
 
     system("cls");
